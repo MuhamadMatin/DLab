@@ -39,10 +39,10 @@ All header use Accept: application/json
     ```
 
     -   Description: Authenticate user and return a JWT token.
-        Request Body:
+    -   Request Body:
         email (string) : User email.
         password (string) : User password.
-        Response:
+    -   Response:
 
     ```json
     {
@@ -60,12 +60,12 @@ All header use Accept: application/json
     ```
 
     -   Description: Register a new user.
-        Request Body:
+    -   Request Body:
         name (string) : User name.
         age (muneric) : User age.
         email (string) : User email.
         password (string) : User password.
-        Response:
+    -   Response:
 
     ```json
     {
@@ -79,9 +79,9 @@ All header use Accept: application/json
     POST /api/logout
     ```
     -   Description: Log out the authenticated user by invalidating their token.
-        Headers:
+    -   Headers:
         Authorization: Bearer {token}
-        Response:
+    -   Response:
     ```json
     {
         "status": true,
@@ -98,9 +98,9 @@ All header use Accept: application/json
     ```
 
     - Description: List of all users.
-      Headers:
+    - Headers:
       Authorization: Bearer {token}
-      Response:
+    - Response:
 
     ```json
     {
@@ -116,9 +116,9 @@ All header use Accept: application/json
     ```
 
     - Description: Retrieve details of a specific user.
-      Headers:
+    - Headers:
       Authorization: Bearer {token}
-      Response:
+    - Response:
 
     ```json
     {
@@ -134,14 +134,14 @@ All header use Accept: application/json
     ```
 
     - Description: Create a new user.
-      Headers:
+    - Headers:
       Authorization: Bearer {token}
-      Request Body:
+    - Request Body:
       name (string) : User name.
       age (numeric) : User age.
       email (string) : User email.
       password (string) : User password.
-      Response:
+    - Response:
 
     ```json
     {
@@ -157,15 +157,15 @@ All header use Accept: application/json
     ```
 
     - Description: Update an existing user's information.
-      Headers:
+    - Headers:
       Authorization: Bearer {token}
-      Request Body:
+    - Request Body:
       name (string) : User name.
       age (numeric) : User age.
       email (string) : User email.
       Sometimes Body:
       password (string) : User password.
-      Response:
+    - Response:
 
     ```json
     {
@@ -182,9 +182,9 @@ All header use Accept: application/json
     ```
 
     - Description: Delete a user by ID.
-      Headers:
+    - Headers:
       Authorization: Bearer {token}
-      Response:
+    - Response:
 
     ```json
     {
@@ -202,9 +202,9 @@ All header use Accept: application/json
     ```
 
     - Description: Retrieve a list of all posts.
-      Headers:
+    - Headers:
       Authorization: Bearer {token}
-      Response:
+    - Response:
 
     ```json
     {
@@ -218,9 +218,9 @@ All header use Accept: application/json
     GET /api/posts/{id}
     ```
     - Description: Retrieve details of a specific post.
-      Headers:
+    - Headers:
       Authorization: Bearer {token}
-      Response:
+    - Response:
     ```json
     {
         "status": true,
@@ -234,13 +234,13 @@ All header use Accept: application/json
     ```
 
     - Description: Create a new post.
-      Headers:
+    - Headers:
       Authorization: Bearer {token}
-      Request Body:
+    - Request Body:
       title (string) : Name or title post.
       body (string) : Content post.
       user_id (numeric) : User id.
-      Response:
+    - Response:
 
     ```json
     {
@@ -257,13 +257,13 @@ All header use Accept: application/json
     ```
 
     - Description: Update an existing post's information.
-      Headers:
+    - Headers:
       Authorization: Bearer {token}
-      Request Body:
+    - Request Body:
       title (string) : Name or title post.
       body (string) : Content post.
       user_id (numeric) : User id.
-      Response:
+    - Response:
 
     ```json
     {
@@ -280,9 +280,9 @@ All header use Accept: application/json
     ```
 
     - Description: Delete a post by ID.
-      Headers:
+    - Headers:
       Authorization: Bearer {token}
-      Response:
+    - Response:
 
     ```json
     {

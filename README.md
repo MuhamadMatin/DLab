@@ -92,7 +92,7 @@ https://localhost:8000/{endpoint}
 
 ## Authentication
 
-All Users, Posts, Logout endpoints require an **Authorization** header with a Bearer token:
+All **Users, Posts, Logout** endpoints require an **Authorization** header with a Bearer token:
 
 ```
 
@@ -392,7 +392,3 @@ The API returns appropriate HTTP status codes along with error messages:
 -   **403**: Forbidden
 -   **404**: Not Found
 -   **500**: Internal Server Error
-
-```
-
-```

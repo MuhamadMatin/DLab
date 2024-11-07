@@ -1,3 +1,85 @@
+# Installation Laravel API with JWT Setup Guide
+
+## Server Requirements
+
+-   **PHP** >= 8.1
+-   **Composer**
+-   **MySQL**
+-   **Laravel** = 11
+
+## Installation Steps
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/MuhamadMatin/DLab.git
+cd DLab
+```
+
+## 2. Install Dependencies
+
+```bash
+composer install
+```
+
+## 3. Environment Setup
+
+```bash
+# Copy .env file
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+```
+
+## 4. Configure Database
+
+Edit **.env** file and update these lines:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_database_username
+DB_PASSWORD=your_database_password
+
+JWT_SECRET=token
+JWT_ALGO=token
+```
+
+## 5. JWT Configuration
+
+```bash
+# Install JWT package
+composer require php-open-source-saver/jwt-auth
+
+# Generate JWT secret
+php artisan jwt:secret
+```
+
+## 6. Run Migrations
+
+```bash
+php artisan migrate --seed
+```
+
+## 7. Start Development Server
+
+```bash
+php artisan serve
+```
+
+Server will run at **http://localhost:8000**
+
+## Testing API
+
+You can use tools like:
+
+-   **Postman**
+-   **Insomnia**
+-   **curl**
+
 # API
 
 ## Base URL
@@ -40,8 +122,8 @@ All header use Accept: application/json
 
     -   Description: Authenticate user and return a JWT token.
     -   Request Body:
-        email (string) : User email.
-        password (string) : User password.
+        1. email (string) : User email.
+        2. password (string) : User password.
     -   Response:
 
     ```json
@@ -61,10 +143,10 @@ All header use Accept: application/json
 
     -   Description: Register a new user.
     -   Request Body:
-        name (string) : User name.
-        age (muneric) : User age.
-        email (string) : User email.
-        password (string) : User password.
+        1. name (string) : User name.
+        2. age (muneric) : User age.
+        3. email (string) : User email.
+        4. password (string) : User password.
     -   Response:
 
     ```json
@@ -137,10 +219,10 @@ All header use Accept: application/json
     - Headers:
       Authorization: Bearer {token}
     - Request Body:
-      name (string) : User name.
-      age (numeric) : User age.
-      email (string) : User email.
-      password (string) : User password.
+        1. name (string) : User name.
+        2. age (numeric) : User age.
+        3. email (string) : User email.
+        4. password (string) : User password.
     - Response:
 
     ```json
@@ -160,11 +242,15 @@ All header use Accept: application/json
     - Headers:
       Authorization: Bearer {token}
     - Request Body:
-      name (string) : User name.
-      age (numeric) : User age.
-      email (string) : User email.
-      Sometimes Body:
-      password (string) : User password.
+
+    1. name (string) : User name.
+    2. age (numeric) : User age.
+    3. email (string) : User email.
+
+    - Sometimes Body:
+
+    1. password (string) : User password.
+
     - Response:
 
     ```json
@@ -237,9 +323,11 @@ All header use Accept: application/json
     - Headers:
       Authorization: Bearer {token}
     - Request Body:
-      title (string) : Name or title post.
-      body (string) : Content post.
-      user_id (numeric) : User id.
+
+    1. title (string) : Name or title post.
+    2. body (string) : Content post.
+    3. user_id (numeric) : User id.
+
     - Response:
 
     ```json
@@ -260,9 +348,11 @@ All header use Accept: application/json
     - Headers:
       Authorization: Bearer {token}
     - Request Body:
-      title (string) : Name or title post.
-      body (string) : Content post.
-      user_id (numeric) : User id.
+
+    1. title (string) : Name or title post.
+    2. body (string) : Content post.
+    3. user_id (numeric) : User id.
+
     - Response:
 
     ```json
@@ -302,3 +392,7 @@ The API returns appropriate HTTP status codes along with error messages:
 -   **403**: Forbidden
 -   **404**: Not Found
 -   **500**: Internal Server Error
+
+```
+
+```
